@@ -1,0 +1,62 @@
+#=========================================H2数据库================================================
+server:
+  port: 8090
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: sa
+    password: sa
+    url: jdbc:h2:mem:dbtest
+    platform: h2
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    format-sql: true
+    properties:
+      #      hibernate.dialect: org.hibernate.dialect.MySQL57Dialect
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+      hibernate.id.new_generator_mappings: false
+      hibernate.dialect.storage_engine: innodb
+
+logging:
+  level:
+    test.com.oak: debug
+    com.oak: debug
+#    org.springframework: debug
+#    org.hibernate: debug
+##======================================开发环境MySQL数据测试配置==========================================
+#server:
+#  port: 8090
+#  servlet:
+#    context-path: /api
+#
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    username: chenz
+#    password: 9sQnzY7H5X
+#    url: jdbc:mysql://117.50.44.173:3399/younid_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=UTC
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  jpa:
+#
+#    generate-ddl: false
+#    show-sql: true
+#    format-sql: true
+#    properties:
+#      hibernate.dialect: org.hibernate.dialect.MySQL57Dialect
+#      #      hibernate.dialect: org.hibernate.dialect.H2Dialect
+#      hibernate.id.new_generator_mappings: false
+#      hibernate.dialect.storage_engine: innodb
+#
+#logging:
+#  level:
+#    test.com.oak: debug
+#    com.oak: debug
+##    org.springframework: debug
+##    org.hibernate: debug

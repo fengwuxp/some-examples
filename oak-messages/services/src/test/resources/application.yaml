@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+
+oak:
+  push:
+    xin-ge:
+      android-secret-key: 111
+      android-access-id: 111
+      ios-access-id: 11
+      ios-access-key: 22

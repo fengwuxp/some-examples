@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>oaknt-aliyun-capabilities</artifactId>
+        <groupId>com.oak.springboot</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>oak-aliyun-sms</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.wuxp.security</groupId>
+            <artifactId>fengwuxp-security-captcha</artifactId>
+            <version>${fenwuxp.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Aliyun Spring Boot dependencies -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>aliyun-sms-spring-boot-starter</artifactId>
+            <version>${alibaba.cloud.boot.version}</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

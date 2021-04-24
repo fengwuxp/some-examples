@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+
+alibaba:
+  cloud:
+    oss:
+      sts:
+        access-key: LTAI4GHU6yQYWKtnGyDyonn7
+        secret-key: rNfza69OcfXKB0WLzgMfiZgyZfaYPE
+        role-arn: acs:ram::1850459803673011:role/sts-token
+      authorization-mode: sts
+      endpoint: oss-cn-zhangjiakou.aliyuncs.com
+      base-path: /test
+      bucket-name: youniding-test
+

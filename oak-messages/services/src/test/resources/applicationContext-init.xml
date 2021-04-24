@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--模板消息-->
+    <bean class="com.oak.messages.initiator.MessageTemplateInitiator">
+        <property name="initData">
+            <list>
+                <bean class="com.oak.messages.services.template.req.CreateMessageTemplateReq">
+                    <property name="group" value="SELLER"/>
+                    <property name="businessType" value="ORDER"/>
+                    <property name="showType" value="NOTIFY"/>
+                    <property name="code" value="CANCEL_ORDER"/>
+                    <property name="pushType" value="STATION"/>
+                    <property name="name" value="订单取消"/>
+                    <property name="title" value="订单取消"/>
+                    <property name="content" value="订单已被取消，订单号：{0}。"/>
+                    <property name="viewCode" value="ORDER_DETAIL"/>
+                    <property name="extData" value="sn={0}"/>
+                    <property name="persistence" value="true"/>
+                </bean>
+
+                <bean class="com.oak.messages.services.template.req.CreateMessageTemplateReq">
+                    <property name="group" value="SELLER"/>
+                    <property name="businessType" value="ORDER"/>
+                    <property name="code" value="NEW_ORDER"/>
+                    <property name="showType" value="NOTIFY"/>
+                    <property name="pushType" value="STATION"/>
+                    <property name="name" value="新订单"/>
+                    <property name="title" value="新订单"/>
+                    <property name="content" value="您有一笔新的订单，订单号：{0}。"/>
+                    <property name="viewCode" value="ORDER_DETAIL"/>
+                    <property name="extData" value="sn={0}"/>
+                    <property name="persistence" value="true"/>
+                </bean>
+
+                <bean class="com.oak.messages.services.template.req.CreateMessageTemplateReq">
+                    <property name="group" value="BUYER"/>
+                    <property name="businessType" value="ORDER"/>
+                    <property name="code" value="SHIPPING_ORDER"/>
+                    <property name="showType" value="NOTIFY"/>
+                    <property name="pushType" value="PUSH"/>
+                    <property name="name" value="发货通知"/>
+                    <property name="title" value="发货成功"/>
+                    <property name="content" value="您的订单已发货，订单号：{0}。"/>
+                    <property name="viewCode" value="ORDER_DETAIL"/>
+                    <property name="extData" value="sn={0}"/>
+                    <property name="persistence" value="true"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>

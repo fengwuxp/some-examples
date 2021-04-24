@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.oak.springboot</groupId>
+        <artifactId>oaknt-spring-boot</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>oaknt-wechat-applet-publish</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>entities</module>
+        <module>api</module>
+        <module>services</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <springdoc.version>1.2.26</springdoc.version>
+        <wuxp-security.version>1.0.0-SNAPSHOT</wuxp-security.version>
+        <levin.dao.version>2.1.0-SNAPSHOT</levin.dao.version>
+        <wx-java.version>3.6.0</wx-java.version>
+    </properties>
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>com.levin.commons.maven</groupId>
+            <artifactId>simple-dao-jpa</artifactId>
+            <version>${levin.dao.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-webmvc-core</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
+
+        <!--swagger ui -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.github.classgraph/classgraph -->
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>4.8.59</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+
+</project>

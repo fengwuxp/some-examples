@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <groupId>com.oak.springboot</groupId>
+    <artifactId>oaknt-spring-boot-deploy</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.version>5.2.2.RELEASE</spring.version>
+        <springdoc.version>1.2.26</springdoc.version>
+        <wuxp-security.version>1.0.0-SNAPSHOT</wuxp-security.version>
+        <levin.dao.version>2.1.0-SNAPSHOT</levin.dao.version>
+        <wx-java.version>3.6.0</wx-java.version>
+        <aspectj.version>1.9.5</aspectj.version>
+
+        <fenwuxp.version>1.0.0-SNAPSHOT</fenwuxp.version>
+        <oaknt-api-support.version>1.0.0-SNAPSHOT</oaknt-api-support.version>
+        <oaknt-cms.version>1.0.0-SNAPSHOT</oaknt-cms.version>
+        <oaknt-member.version>1.0.0-SNAPSHOT</oaknt-member.version>
+        <oaknt-organization.version>1.0.0-SNAPSHOT</oaknt-organization.version>
+        <oaknt-payment.version>1.0.0-SNAPSHOT</oaknt-payment.version>
+        <oaknt-rbac.version>1.0.0-SNAPSHOT</oaknt-rbac.version>
+        <oaknt-service-provider.version>1.0.0-SNAPSHOT</oaknt-service-provider.version>
+
+        <!--1.8编译参数 保留方法名称-->
+        <compilerArgument>-parameters</compilerArgument>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven-source-plugin.attach>false</maven-source-plugin.attach>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>编译时保留方法参数名称</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <!--1.8编译参数-保留方法名称-->
+                <compilerArgument>-parameters</compilerArgument>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>跳过测试</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>上传源代码到 Maven</id>
+            <properties>
+                <maven-source-plugin.attach>true</maven-source-plugin.attach>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <modules>
+        <module>../oak-rbac/entities</module>
+    </modules>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.levin.commons.maven</groupId>
+            <artifactId>simple-dao-jpa</artifactId>
+            <version>${levin.dao.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <version>1.1.8-SNAPSHOT</version>
+            <groupId>com.levin.commons.maven</groupId>
+            <artifactId>service-support</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
